@@ -3,6 +3,8 @@
 1. [Find a word in all files](#find-a-word-in-all-files)
 1. [Find release on ubuntu](#find-release-on-ubuntu)
 1. [User should not need password](#user-should-not-need-password)
+1. [Nvidia gpu info](#nvidia-gpu-info)
+
 #### Find a word in all files
 ```
 grep -Rl startElastic .
@@ -44,3 +46,21 @@ newuser ALL=(ALL) NOPASSWD:ALL
 
 ```
 After this `newuser` will not be asked for passwords.
+
+#### Nvidia gpu info
+Gpu name
+```
+nvidia-smi --query-gpu=name --format=csv,noheader
+```
+This will give for `Tesla K80`
+```
+Tesla K80
+```
+Cuda version
+```
+cat /usr/local/cuda/version.txt
+```
+Gives cuda version
+```
+CUDA Version 10.1.243
+```
