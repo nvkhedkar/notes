@@ -1,10 +1,46 @@
 # Ubuntu
 
-### Find a word in all files  
-
+1. [Find a word in all files](#find-a-word-in-all-files)
+1. [Find release on ubuntu](#find-release-on-ubuntu)
+1. [User should not need password](#user-should-not-need-password)
+#### Find a word in all files
 ```
 grep -Rl startElastic .
 ```
 >-R: recursive search  
 >l: include only filenames  
 
+#### Find release on ubuntu
+Command  
+```
+cat /etc/os-release
+```
+Output  
+```
+NAME="Ubuntu"
+VERSION="18.04.3 LTS (Bionic Beaver)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 18.04.3 LTS"
+VERSION_ID="18.04"
+HOME_URL="https://www.ubuntu.com/"
+SUPPORT_URL="https://help.ubuntu.com/"
+BUG_REPORT_URL="https://bugs.launchpad.net/ubuntu/"
+PRIVACY_POLICY_URL="https://www.ubuntu.com/legal/terms-and-policies/privacy-policy"
+VERSION_CODENAME=bionic
+UBUNTU_CODENAME=bionic
+```
+
+#### User should not need password
+To setup a user `newuser` so that the user is not asked for password when running commands.
+```
+sudo usermod -aG sudo newuser
+```
+This adds the user to `sudo` group.  
+Now add the following line at the endof `/etc/sudoers` file
+```
+#includedir /etc/sudoers.d
+newuser ALL=(ALL) NOPASSWD:ALL
+
+```
+After this `newuser` will not be asked for passwords.
