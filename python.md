@@ -6,3 +6,6 @@ Final options:
 
 #### Strategy and command pattern python
 [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)
+
+#### New Miniconda stuff
+Use Miniconda prompt to do `conda install` or `conda create`  
