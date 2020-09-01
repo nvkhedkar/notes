@@ -7,10 +7,19 @@
 
 #### Find a word in all files
 ```
-grep -Rl startElastic .
+grep -r -l startElastic .
 ```
->-R: recursive search  
->l: include only filenames  
+>-r : recursive search  
+>-l : include only filenames 
+
+```
+grep -r -l -i my_name --include \*.py .
+```
+-r : recursive  
+-l : include only filenames  
+-i : case insensative  
+my_name : the pattern  
+--include \\*.py : Search only in .py files   
 
 #### Find release on ubuntu
 Command  
