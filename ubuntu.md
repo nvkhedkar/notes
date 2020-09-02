@@ -57,7 +57,7 @@ newuser ALL=(ALL) NOPASSWD:ALL
 After this `newuser` will not be asked for passwords.
 
 #### Nvidia gpu info
-Gpu name
+##### Gpu name
 ```
 nvidia-smi --query-gpu=name --format=csv,noheader
 ```
@@ -65,7 +65,15 @@ This will give for `Tesla K80`
 ```
 Tesla K80
 ```
-Cuda version
+##### Driver Version  
+```
+nvidia-smi --query-gpu=driver_version --format=csv,noheader
+```
+Output:
+```
+418.87.00
+```
+###### Cuda version
 ```
 cat /usr/local/cuda/version.txt
 ```
