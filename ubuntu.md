@@ -4,15 +4,16 @@
 1. [Find release on ubuntu](#find-release-on-ubuntu)
 1. [User should not need password](#user-should-not-need-password)
 1. [Nvidia gpu info](#nvidia-gpu-info)
+1. [Find command](#find-command)
 
-#### Find a word in all files
+### Find a word in all files
 ```
 grep -Rl startElastic .
 ```
 >-R: recursive search  
 >l: include only filenames  
 
-#### Find release on ubuntu
+### Find release on ubuntu
 Command  
 ```
 cat /etc/os-release
@@ -33,7 +34,7 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-#### User should not need password
+### User should not need password
 To setup a user `newuser` so that the user is not asked for password when running commands.
 ```
 sudo usermod -aG sudo newuser
@@ -47,8 +48,9 @@ newuser ALL=(ALL) NOPASSWD:ALL
 ```
 After this `newuser` will not be asked for passwords.
 
-#### Nvidia gpu info
-Gpu name
+### Nvidia gpu info
+
+#### Gpu name
 ```
 nvidia-smi --query-gpu=name --format=csv,noheader
 ```
@@ -56,7 +58,8 @@ This will give for `Tesla K80`
 ```
 Tesla K80
 ```
-Cuda version
+
+#### Cuda version
 ```
 cat /usr/local/cuda/version.txt
 ```
@@ -64,3 +67,17 @@ Gives cuda version
 ```
 CUDA Version 10.1.243
 ```
+
+### Find command
+```
+find . \( -name '*.pdf' -or -name '*.conf' \)
+```
+Recursively finds `pdf` and `conf` files
+```
+find . \( -name '*.pdf' -or -name '*.conf' \) -print
+```
+Prints the file names
+```
+find . \( -name '*.pdf' -or -name '*.conf' \) -delete
+```
+Deletes the files
