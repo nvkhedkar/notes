@@ -67,7 +67,22 @@ This will give for `Tesla K80`
 ```
 Tesla K80
 ```
-
+#### Gpu ram
+```
+nvidia-smi --query-gpu=memory.total --format=csv,noheader
+```
+Gives:
+```
+11441 MiB
+```
+#### Gpu driver version
+```
+nvidia-smi --query-gpu=driver_version --format=csv,noheader
+```
+Gives:
+```
+418.87.00
+```
 #### Cuda version
 ```
 cat /usr/local/cuda/version.txt
