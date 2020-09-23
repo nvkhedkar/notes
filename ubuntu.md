@@ -3,6 +3,7 @@
 1. [Find a word in all files](#find-a-word-in-all-files)
 1. [Find release on ubuntu](#find-release-on-ubuntu)
 1. [User should not need password](#user-should-not-need-password)
+1. [Cpu info](#cpu-info)
 1. [Nvidia gpu info](#nvidia-gpu-info)
 1. [Find command](#find-command)
 
