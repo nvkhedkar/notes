@@ -6,7 +6,7 @@
 1. [Nvidia gpu info](#nvidia-gpu-info)
 1. [Find command](#find-command)
 
-### Find a word in all files
+## Find a word in all files
 ```
 grep -r -l startElastic .
 ```
@@ -22,7 +22,7 @@ grep -r -l -i my_name --include \*.py .
 my_name : the pattern  
 --include \\*.py : Search only in .py files   
 
-### Find release on ubuntu
+## Find release on ubuntu
 Command  
 ```
 cat /etc/os-release
@@ -43,7 +43,7 @@ VERSION_CODENAME=bionic
 UBUNTU_CODENAME=bionic
 ```
 
-### User should not need password
+## User should not need password
 To setup a user `newuser` so that the user is not asked for password when running commands.
 ```
 sudo usermod -aG sudo newuser
@@ -57,7 +57,21 @@ newuser ALL=(ALL) NOPASSWD:ALL
 ```
 After this `newuser` will not be asked for passwords.
 
-### Nvidia gpu info
+## Cpu info
+```
+lscpu | egrep 'Model name|Socket|Thread|NUMA|CPU\(s\)'
+```
+Gives:
+```
+CPU(s):              6
+On-line CPU(s) list: 0-5
+Thread(s) per core:  1
+Socket(s):           1
+NUMA node(s):        1
+Model name:          Intel(R) Xeon(R) CPU E5-2690 v3 @ 2.60GHz
+NUMA node0 CPU(s):   0-5
+```
+## Nvidia gpu info
 
 #### Gpu name
 ```
@@ -92,7 +106,7 @@ Gives cuda version
 CUDA Version 10.1.243
 ```
 
-### Find command
+## Find command
 ```
 find . \( -name '*.pdf' -or -name '*.conf' \)
 ```
