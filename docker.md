@@ -5,4 +5,16 @@ docker container run -d --name=pg11-1 -p 5432:5432 -e POSTGRES_PASSWORD=secret -
 ```
 Runs postgres:11.4 image with:
 - data mapped and persisted in local folder /pgdata/pg11-1
-- password 'secret'
+- password 'secret'  
+Restart the container
+```
+docker start -i pg11-1 &
+```
+## Redis
+```
+docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis --name redis-1 redis redis-server /usr/local/etc/redis/redis.conf
+```
+Restart the container
+```
+docker start -i redis-1 &
+```
