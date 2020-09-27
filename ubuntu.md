@@ -120,3 +120,9 @@ Prints the file names
 find . \( -name '*.pdf' -or -name '*.conf' \) -delete
 ```
 Deletes the files
+
+## Snippets
+### Remove ^M
+```
+perl -p -e 's/\r//g' infile > outfile
+```
