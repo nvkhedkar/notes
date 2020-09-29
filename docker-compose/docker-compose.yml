@@ -1,0 +1,22 @@
+version: "3.3"
+services:
+  pg11:
+    image: postgres:11.4
+    container_name: "pg11-1"
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_PASSWORD=secret 
+      - PGDATA=/pgdata/pg11-1
+    volumes:
+      - /mydocker/pgdata/pg11-1:/pgdata/pg11-1
+    restart: always
+  
+  redis:
+    image: redis
+    container_name: "redis-1"
+    ports:
+      - "6379:6379"
+    volumes:
+      - /mydocker/redisdata/conf:/usr/local/etc/redis
+    command:  redis-server /usr/local/etc/redis/redis.conf
