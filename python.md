@@ -23,3 +23,14 @@ gunicorn -w 4 --reload -b 0.0.0.0:8001 "app.main:create_app(testing=False)"
 - -w: Number of workers
 - --reload: Reload automatically when files are changed
 - -b: Location of the flask app
+
+## Pandas
+#### Rearrange columns
+Move result columns to the end of all other columns.  
+Re-create the dataframe by:
+1. Iterate over all columns, but skip result columns
+1. Added result columns at the end
+```
+result_columns = ['res1', 'res2']
+df = df[[c for c in df if c not in result_columns] + result_columns]
+```
