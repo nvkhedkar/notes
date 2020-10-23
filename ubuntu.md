@@ -126,3 +126,9 @@ Deletes the files
 ```
 perl -p -e 's/\r//g' infile > outfile
 ```
+
+## Users
+### Add user
+```
+sudo useradd -s /bin/bash -d /home/nkhedkar/ -m -G sudo nkhedkar
+```
