@@ -1,22 +1,16 @@
 # Python
 
-#### Installation for certificate issue
+## Installation for certificate issue
 Final options:
 ```
 pip install --default-timeout=1000 --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org <package-name>
 ```
 
-#### Strategy and command pattern python
-[Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)
-
-#### New Miniconda stuff
+## New Miniconda stuff
 Use Miniconda prompt to do `conda install` or `conda create`  
 
-## Links
-[https://l7.curtisnorthcutt.com/about](https://l7.curtisnorthcutt.com/about) - deep learning Ph.d student, confident learning framework  
-
 ## Gnuicorn
-#### Start flask server
+### Start flask server
 ```
 gunicorn -w 4 --reload -b 0.0.0.0:8001 "app.main:create_app(testing=False)"
 ```
@@ -25,7 +19,7 @@ gunicorn -w 4 --reload -b 0.0.0.0:8001 "app.main:create_app(testing=False)"
 - -b: Location of the flask app
 
 ## Pandas
-#### Rearrange columns
+### Rearrange columns
 Move result columns to the end of all other columns.  
 Re-create the dataframe by:
 1. Iterate over all columns, but skip result columns
@@ -34,3 +28,8 @@ Re-create the dataframe by:
 result_columns = ['res1', 'res2']
 df = df[[c for c in df if c not in result_columns] + result_columns]
 ```
+
+## Links
+[Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
+[deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
+
