@@ -20,3 +20,4 @@ services:
     volumes:
       - /mydocker/redisdata/conf:/usr/local/etc/redis
     command:  redis-server /usr/local/etc/redis/redis.conf
+
