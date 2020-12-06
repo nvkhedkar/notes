@@ -132,3 +132,12 @@ perl -p -e 's/\r//g' infile > outfile
 ```
 sudo useradd -s /bin/bash -d /home/nkhedkar/ -m -G sudo nkhedkar
 ```
+
+## PostgreSql
+### Check
+[stackoverflow link](https://stackoverflow.com/questions/42653690/psql-could-not-connect-to-server-no-such-file-or-directory-5432-error)  
+pg_lsclusters: to check status of all clusters  
+pg_ctlcluster version cluster start  
+pg_ctlcluster 10 main start
+
+
