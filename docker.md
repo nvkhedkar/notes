@@ -35,6 +35,29 @@ GRANT
 docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis --name redis-1 redis redis-server /usr/local/etc/redis/redis.conf
 ```
 
+## Rabbitmq
+    image: rabbitmq:3-management
+    container_name: rabbitmq-1
+    volumes:
+      - /mydocker/rabbitmq/etc/:/etc/rabbitmq/
+      - /mydocker/rabbitmq/data/:/var/lib/rabbitmq/
+      - /mydocker/rabbitmq/logs/:/var/log/rabbitmq/
+    environment:
+      RABBITMQ_ERLANG_COOKIE: "erlang_cookie"
+      # RABBITMQ_DEFAULT_USER: guest
+      # RABBITMQ_DEFAULT_PASS: password
+    ports:
+      - 5672:5672
+      - 15672:15672
+```
+docker run -d --name=rabbitmq-1 -p 5672:5672 -p 15672:15672 -e RABBITMQ_ERLANG_COOKIE=erlang_cookie -v /mydocker/rabbitmq/etc/:/etc/rabbitmq/ -v /mydocker/rabbitmq/data/:/var/lib/rabbitmq/ -v /mydocker/rabbitmq/logs/:/var/log/rabbitmq/ rabbitmq:3-management
+```
+Other variables
+```
+-e RABBITMQ_DEFAULT_USER=guest
+-e RABBITMQ_DEFAULT_PASS=password
+```
+
 ## Docker commands
 Stop container
 ```
