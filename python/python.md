@@ -32,4 +32,5 @@ df = df[[c for c in df if c not in result_columns] + result_columns]
 ## Links
 [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
+[Superset plugin](https://www.npmjs.com/package/@superset-ui/plugin-chart-table)
 
