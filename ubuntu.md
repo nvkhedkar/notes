@@ -98,6 +98,15 @@ Gives:
 ```
 418.87.00
 ```
+
+#### Gpu usage
+```
+nvidia-smi  --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi -i 0 --query-gpu=memory.used --format=csv,noheader | awk  '{ print $1 }'
+nvidia-smi  --query-gpu=count --format=csv,noheader | awk  '{ print $1 }'
+nvidia-smi  --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi
+```
 #### Cuda version
 ```
 cat /usr/local/cuda/version.txt
