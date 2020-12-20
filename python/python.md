@@ -33,4 +33,5 @@ df = df[[c for c in df if c not in result_columns] + result_columns]
 [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
 [Superset plugin](https://www.npmjs.com/package/@superset-ui/plugin-chart-table)
-[Embed Dash in flask](https://hackersandslackers.com/plotly-dash-with-flask/)
+[Embed Dash in flask](https://hackersandslackers.com/plotly-dash-with-flask/)  
+[ML pipeline with kafka, airflow and MLpipe](https://medium.com/vantageai/keeping-your-ml-model-in-shape-with-kafka-airflow-and-mlflow-143d20024ba6)
