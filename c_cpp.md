@@ -113,3 +113,8 @@ std::vector<std::string> split_string_by_newline(const std::string& str)
     return result;
 }
 ```
+
+### sleep
+```
+std::this_thread::sleep_for(std::chrono::milliseconds(x));
+```

@@ -101,10 +101,13 @@ Gives:
 
 #### Gpu usage
 ```
-nvidia-smi  --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader
 nvidia-smi -i 0 --query-gpu=memory.used --format=csv,noheader | awk  '{ print $1 }'
-nvidia-smi  --query-gpu=count --format=csv,noheader | awk  '{ print $1 }'
-nvidia-smi  --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi --query-gpu=count --format=csv,noheader | awk  '{ print $1 }'
+nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid,gpu_name,used_memory --format=csv,noheader,nounits
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid --format=csv,noheader,nounits
+nvidia-smi --query-gpu=index,uuid,utilization.gpu,memory.total,memory.used,memory.free,driver_version,name,gpu_serial,display_active,display_mode,temperature.gpu --format=csv,noheader,nounits"
 nvidia-smi
 ```
 #### Cuda version
