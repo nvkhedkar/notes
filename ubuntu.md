@@ -98,6 +98,18 @@ Gives:
 ```
 418.87.00
 ```
+
+#### Gpu usage
+```
+nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi -i 0 --query-gpu=memory.used --format=csv,noheader | awk  '{ print $1 }'
+nvidia-smi --query-gpu=count --format=csv,noheader | awk  '{ print $1 }'
+nvidia-smi --query-gpu=utilization.gpu --format=csv,noheader
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid,gpu_name,used_memory --format=csv,noheader,nounits
+nvidia-smi --query-compute-apps=pid,process_name,gpu_uuid --format=csv,noheader,nounits
+nvidia-smi --query-gpu=index,uuid,utilization.gpu,memory.total,memory.used,memory.free,driver_version,name,gpu_serial,display_active,display_mode,temperature.gpu --format=csv,noheader,nounits"
+nvidia-smi
+```
 #### Cuda version
 ```
 cat /usr/local/cuda/version.txt
@@ -132,3 +144,12 @@ perl -p -e 's/\r//g' infile > outfile
 ```
 sudo useradd -s /bin/bash -d /home/nkhedkar/ -m -G sudo nkhedkar
 ```
+
+## PostgreSql
+### Check
+[stackoverflow link](https://stackoverflow.com/questions/42653690/psql-could-not-connect-to-server-no-such-file-or-directory-5432-error)  
+pg_lsclusters: to check status of all clusters  
+pg_ctlcluster version cluster start  
+pg_ctlcluster 10 main start
+
+
