@@ -57,7 +57,18 @@ Other variables
 -e RABBITMQ_DEFAULT_USER=guest
 -e RABBITMQ_DEFAULT_PASS=password
 ```
-
+### Create user in running container
+```
+docker exec -it rabbitmq-1 bash
+```
+Run the follwoing commands
+```
+rabbitmqctl add_user test test
+rabbitmqctl set_user_tags test administrator
+rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
+rabbitmqctl add_vhost afhost1
+rabbitmqctl set_permissions -p afhost1 test ".*" ".*" ".*"
+```
 ## Docker commands
 Stop container
 ```
