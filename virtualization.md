@@ -10,3 +10,8 @@ To make these settings:
 2. Type `optionalFeatures` - this opens the "Turn Windows features on or off" menu
 3. Then turn the features described in the link on/off  
 Done
+
+### Start clipboard
+```
+VBoxClient --clipboard
+```
