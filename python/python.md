@@ -6,6 +6,11 @@ Final options:
 pip install --default-timeout=1000 --trusted-host pypi.python.org --trusted-host files.pythonhosted.org --trusted-host pypi.org <package-name>
 ```
 
+## Ignore packages while installing
+Use the following to avoid packages from being uninstalled and re-installed
+```
+--ignore-installed <package>
+```
 ## New Miniconda stuff
 Use Miniconda prompt to do `conda install` or `conda create`  
 
