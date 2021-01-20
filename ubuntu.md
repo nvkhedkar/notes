@@ -23,6 +23,10 @@ grep -r -l -i my_name --include \*.py .
 my_name : the pattern  
 --include \\*.py : Search only in .py files   
 
+## du without "Permission denied"
+```
+du -h . --max-depth=1 2> >(grep -v 'Permission denied') | sort -n
+```
 ## Find release on ubuntu
 Command  
 ```
