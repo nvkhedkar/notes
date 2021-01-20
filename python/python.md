@@ -40,3 +40,6 @@ df = df[[c for c in df if c not in result_columns] + result_columns]
 [Superset plugin](https://www.npmjs.com/package/@superset-ui/plugin-chart-table)
 [Embed Dash in flask](https://hackersandslackers.com/plotly-dash-with-flask/)  
 [ML pipeline with kafka, airflow and MLpipe](https://medium.com/vantageai/keeping-your-ml-model-in-shape-with-kafka-airflow-and-mlflow-143d20024ba6)
+[Flask and angular example](https://realpython.com/flask-by-example-part-1-project-setup/)
+[tune-sklearn - Gid search for scikit learn](https://github.com/ray-project/tune-sklearn)
+[Ray - python supported api for distributed computing](https://docs.ray.io/en/master/)
