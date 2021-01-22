@@ -27,6 +27,10 @@ my_name : the pattern
 ```
 du -h . --max-depth=1 2> >(grep -v 'Permission denied') | sort -n
 ```
+## list only top 5 files
+```
+ls -lth | head -5
+```
 ## Find release on ubuntu
 Command  
 ```
