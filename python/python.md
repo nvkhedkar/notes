@@ -45,4 +45,4 @@ df = df[[c for c in df if c not in result_columns] + result_columns]
 [Ray - python supported api for distributed computing](https://docs.ray.io/en/master/)
 [Boruta feature selection](https://www.kaggle.com/residentmario/automated-feature-selection-with-boruta)
 [keras-redis-flask deep learning rest api](https://www.pyimagesearch.com/2018/01/29/scalable-keras-deep-learning-rest-api/)
-
+[Celery on windows](https://stackoverflow.com/questions/54717597/django-celery-scheduling-daily-tasks-on-windows-server)
