@@ -1,6 +1,6 @@
 # Distributed Systems
 ## Links
-[Patterns of Distributed Systems](https://martinfowler.com/articles/patterns-of-distributed-systems/)
+[Patterns of Distributed Systems - Matrin Fowler](https://martinfowler.com/articles/patterns-of-distributed-systems/)
 - [HeartBeat](https://martinfowler.com/articles/patterns-of-distributed-systems/heartbeat.html)  
 
 [//]: <> (Dummy comment to end bullet list)  
