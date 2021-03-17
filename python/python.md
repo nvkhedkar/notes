@@ -34,6 +34,16 @@ result_columns = ['res1', 'res2']
 df = df[[c for c in df if c not in result_columns] + result_columns]
 ```
 
+## PySpark
+### Pyspark on windows machine
+Start master
+```
+spark-class org.apache.spark.deploy.master.Master
+```
+Start any number of workers (Master running on spark://192.168.56.1:7077)
+```
+spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --memory 2g
+```
 ## Links
 [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
