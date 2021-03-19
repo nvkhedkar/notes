@@ -30,6 +30,23 @@ postgres=# GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO airflow;
 GRANT
 
 ```
+#### Postgres commands
+Connect to postgresql as user postgres
+```
+root@64e80b37b839:/# psql -U postgres
+```
+List databases
+```
+postgres=# \l
+```
+Connect db nvktestdb1 with user postgres
+```
+root@64e80b37b839:/# psql -U postgres -d nvktestdb1
+```
+List tables
+```
+nvktestdb1=# \dt
+```
 ## Redis
 ```
 docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis --name redis-1 redis redis-server /usr/local/etc/redis/redis.conf
