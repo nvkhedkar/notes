@@ -47,6 +47,12 @@ List tables
 ```
 nvktestdb1=# \dt
 ```
+Commands
+```
+explain analyse select * from my_table where column_name < 20;
+\d my_table
+create index ix_my_table_column_name on my_table(column_name);
+```
 ## Redis
 ```
 docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis --name redis-1 redis redis-server /usr/local/etc/redis/redis.conf

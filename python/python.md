@@ -44,6 +44,8 @@ Start any number of workers (Master running on spark://192.168.56.1:7077)
 ```
 spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --memory 2g
 ```
+[Read a postgresql db](https://stackoverflow.com/questions/34948296/using-pyspark-to-connect-to-postgresql)
+
 ## Links
 [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
@@ -56,3 +58,5 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 [Boruta feature selection](https://www.kaggle.com/residentmario/automated-feature-selection-with-boruta)
 [keras-redis-flask deep learning rest api](https://www.pyimagesearch.com/2018/01/29/scalable-keras-deep-learning-rest-api/)
 [Celery on windows](https://stackoverflow.com/questions/54717597/django-celery-scheduling-daily-tasks-on-windows-server)
+[Celery to Dramatiq tips](https://blog.narrativ.com/converting-celery-to-dramatiq-a-py3-war-story-23df217b426)
+
