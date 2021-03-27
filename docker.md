@@ -59,6 +59,7 @@ docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis 
 ```
 
 ## Rabbitmq
+```
     image: rabbitmq:3-management
     container_name: rabbitmq-1
     volumes:
@@ -73,7 +74,12 @@ docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis 
       - 5672:5672
       - 15672:15672
 ```
+```
 docker run -d --name=rabbitmq-1 -p 5672:5672 -p 15672:15672 -e RABBITMQ_ERLANG_COOKIE=erlang_cookie -v /mydocker/rabbitmq/etc/:/etc/rabbitmq/ -v /mydocker/rabbitmq/data/:/var/lib/rabbitmq/ -v /mydocker/rabbitmq/logs/:/var/log/rabbitmq/ rabbitmq:3-management
+```
+Simple command also works - default user/pass is guest/guest
+```
+docker run -d --hostname hoost-rabbit-2 --name rabbit-2 rabbitmq:3-management -p 5672:5672 -p 15672:15672
 ```
 Other variables
 ```
