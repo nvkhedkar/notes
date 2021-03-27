@@ -79,7 +79,7 @@ docker run -d --name=rabbitmq-1 -p 5672:5672 -p 15672:15672 -e RABBITMQ_ERLANG_C
 ```
 Simple command also works - default user/pass is guest/guest
 ```
-docker run -d --hostname hoost-rabbit-2 --name rabbit-2 rabbitmq:3-management -p 5672:5672 -p 15672:15672
+docker run -d --hostname hoost-rabbit-2 --name rabbit-2 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
 Other variables
 ```
