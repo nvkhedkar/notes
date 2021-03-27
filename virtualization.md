@@ -15,3 +15,26 @@ Done
 ```
 VBoxClient --clipboard
 ```
+
+### Update disk uuid
+```
+C:\Program Files\Oracle\VirtualBox610>VBoxManage internalcommands sethduuid “C:\virtualbox\nk-ubuntu-18.04-base-amd64-150g.vdi”
+```
+
+### Using local vagrant box
+
+#### Package virtualbox machine into box - box created in current dir
+```
+vagrant package --base vagrant1_default_1552542834412_22432 --output ubuntu-18.04-base-amd64.box
+```
+
+#### Add the box to vagrant
+```
+vagrant box add ubuntu-18.04-base-amd64 file:///e:/VirtualBox/myboxes/ubuntu-18.04-base-amd64.box
+```
+
+#### To use the box: Init the box:
+```
+vagrant init ubuntu-18.04-base-amd64 
+```
+This addes vagrantfile in dir and now vagrant up can be used to start the box
