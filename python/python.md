@@ -59,4 +59,5 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 - [keras-redis-flask deep learning rest api](https://www.pyimagesearch.com/2018/01/29/scalable-keras-deep-learning-rest-api/)
 - [Celery on windows](https://stackoverflow.com/questions/54717597/django-celery-scheduling-daily-tasks-on-windows-server)
 - [Celery to Dramatiq tips](https://blog.narrativ.com/converting-celery-to-dramatiq-a-py3-war-story-23df217b426)
+- [Vaex dataframe like pandas](https://vaex.io/docs/tutorial.html)
 
