@@ -98,6 +98,11 @@ rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 rabbitmqctl add_vhost afhost1
 rabbitmqctl set_permissions -p afhost1 test ".*" ".*" ".*"
 ```
+
+## install docker
+```
+sudo apt install apt-transport-https ca-certificates curl software-properties-common
+```
 ## Docker commands
 Stop container
 ```
@@ -107,3 +112,23 @@ Restart the container
 ```
 docker start -i redis-1 &
 ```
+
+```
+docker volume ls
+docker volume create prom-1
+docker volume inspect prom-1
+```
+```
+docker container rm prom-1
+docker volume rm prom-1
+```
+
+## Configure docker volume
+- Create group "docker" `sudo groupadd docker`
+- Create docker volume `docker volume create <name>`
+- Volume is created in `/var/lib/docker/volumes/<name>`
+- If it is owned by `root:root` do `sudo chown -R root:docker /var/lib/docker` 
+- Now the docker folder is owned by `docker`
+- put any user that needs access to this folder in group docker `sudo usermod -aG docker <username>`
+- Change permissions of /var/lib/docker as `sudo chmod 0771 -R /var/lib/docker`
+- Now all users in the docker group have full access to `/var/lib/docker`  
