@@ -164,6 +164,10 @@ pg_ctlcluster 10 main start
 ### Uninstall nvidia cuda toolkit
 [stackoverflow](https://askubuntu.com/questions/1271418/how-to-purge-or-completely-remove-cuda-from-ubuntu-18-04-and-reinstall-ver-10-2)
 
+Check nvidia driver version when nvidia-smi is not working
+```
+modinfo nvidia | grep version
+```
 For checking
 ```
 sudo apt-cache search nvidia | grep cuda
@@ -176,4 +180,8 @@ apt-cache depends packagename
 sudo rm /etc/apt/sources.list.d/cuda*
 sudo apt remove --autoremove nvidia-cuda-toolkit
 ```
+
+### dpkg stuff
+[dpkg cheatsheet](https://www.cyberciti.biz/howto/question/linux/dpkg-cheat-sheet.php)
+
 

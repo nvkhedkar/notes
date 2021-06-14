@@ -61,3 +61,5 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 - [Celery to Dramatiq tips](https://blog.narrativ.com/converting-celery-to-dramatiq-a-py3-war-story-23df217b426)
 - [Vaex dataframe like pandas](https://vaex.io/docs/tutorial.html)
 
+## Cheatsheets
+- [Flask cheatsheet](https://blog.appseed.us/flask-cheat-sheet-and-free-templates-63zo/)

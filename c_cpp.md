@@ -118,3 +118,17 @@ std::vector<std::string> split_string_by_newline(const std::string& str)
 ```
 std::this_thread::sleep_for(std::chrono::milliseconds(x));
 ```
+
+### linux debugging
+Dumping core:  
+- check value of `ulimit -c`, if that's 0 then no core file will be written. 
+- Run `ulimit -c unlimited` to enable core dumping. Core is dumped in the same dir as program is run in.
+
+#### gdb
+gdb can be used to view core dump file  
+(gdb tutorial)[http://www.brendangregg.com/blog/2016-08-09/gdb-example-ncurses.html]
+Starting gdb:
+```
+gdb `which python` /var/cores/core.python.30520
+gdb <path_to_exe_to_debug> <path_to_core_dump>
+```
