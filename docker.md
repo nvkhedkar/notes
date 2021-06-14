@@ -79,7 +79,7 @@ docker run -d --name=rabbitmq-1 -p 5672:5672 -p 15672:15672 -e RABBITMQ_ERLANG_C
 ```
 Simple command also works - default user/pass is guest/guest
 ```
-docker run -d --hostname hoost-rabbit-2 --name rabbit-2 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
+docker run -d --hostname host-rabbit-2 --name rabbit-2 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
 Other variables
 ```
@@ -98,6 +98,17 @@ rabbitmqctl set_permissions -p / test ".*" ".*" ".*"
 rabbitmqctl add_vhost afhost1
 rabbitmqctl set_permissions -p afhost1 test ".*" ".*" ".*"
 ```
+
+## Grafana
+```
+docker run -d --hostname grafa-host-1 --name grafa-1 -p 3000:3000 grafana/grafana
+```
+
+## Prometheus
+```
+docker run -d --hostname prom-host-1 --name prom-1 -p 9090:9090 -v my-prom-1:/etc/prometheus prom/prometheus
+```
+`my-prom-1/_data/prometheus.yml` should be created  
 
 ## install docker
 ```
