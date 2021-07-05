@@ -55,7 +55,7 @@ create index ix_my_table_column_name on my_table(column_name);
 ```
 ## Redis
 ```
-docker run -d -p 6379:6379 -v /docker-stuff/redisdata/conf:/usr/local/etc/redis --name redis-1 redis redis-server /usr/local/etc/redis/redis.conf
+docker run -d --hostname redis-host-1 --name redis-1 -p 6379:6379 -v /home/vagrant/mydocker/redis/redis-1/conf:/usr/local/etc/redis redis redis-server /usr/local/etc/redis/redis.conf
 ```
 
 ## Rabbitmq
