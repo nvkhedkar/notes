@@ -114,6 +114,30 @@ docker run -d --hostname prom-host-1 --name prom-1 -p 9090:9090 -v my-prom-1:/et
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
 ```
+
+## Docker image
+### Build docker image
+```
+cd <dir-having-dockerfile>
+docker build . -t nkhedkar/nvk-node-app
+```
+This builds docker image - `-t` adds tag to image
+### View image
+```
+docker image ls
+REPOSITORY              TAG              IMAGE ID       CREATED          SIZE
+nkhedkar/nvk-node-app   latest           d23e4c99a893   15 minutes ago   192MB
+```
+### Remove image
+```
+docker image rm nkhedkar/nvk-node-app
+```
+### Start container from image
+```
+docker run -d -p 8089:8089 --hostname host-nvk-node-1 --name nvk-node-1 nkhedkar/nvk-node-app
+```
+
+
 ## Docker commands
 Stop container
 ```
