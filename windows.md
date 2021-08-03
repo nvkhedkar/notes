@@ -6,3 +6,9 @@ To find status of services loading at startup:
 ## WSL 2 stuff
 1. [Cool things in wsl](https://www.hanselman.com/blog/CoolWSLWindowsSubsystemForLinuxTipsAndTricksYouOrIDidntKnowWerePossible.aspx)
 2. [Wsl 2 developers guide](https://www.sitepoint.com/wsl2-windows-terminal/)
+
+## Open sound settings
+Run in the search bar
+```
+mmsys.cpl
+```
