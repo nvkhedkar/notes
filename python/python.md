@@ -51,6 +51,31 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 - [sympy](https://www.sympy.org/en/index.html): Symbolic mathematics in python
 - [Shapely](https://github.com/Toblerity/Shapely): Geometric object manipulation in 2D cartesian plane
   
+## fastbook
+### Install locally
+#### Download and Install Anaconda
+#### Open the Anaconda 3 Powershell Prompt and type in order:
+#### Create a new Anaconda Environment for the FastAI Book
+```
+conda create --name fastbook
+```
+#### Switch to the new environment
+```
+conda activate fastbook
+```
+#### Install pytorch, fastai and dependencies
+```
+conda install -c pytorch -c fastai fastai2
+```
+#### Install fastbook notebooks and dependencies
+```
+conda install -c fastai fastbook
+```
+#### Clone the FastAI book repo - Install git if needed
+```
+git clone https://github.com/fastai/fastbook
+```
+
 ## Links
 - [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 - [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
