@@ -46,6 +46,11 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 ```
 [Read a postgresql db](https://stackoverflow.com/questions/34948296/using-pyspark-to-connect-to-postgresql)
 
+## Packages
+- [trimesh](https://trimsh.org/trimesh.base.html): Mesh analysis in python
+- [sympy](https://www.sympy.org/en/index.html): Symbolic mathematics in python
+- [Shapely](https://github.com/Toblerity/Shapely): Geometric object manipulation in 2D cartesian plane
+  
 ## Links
 - [Strategy and command pattern](https://medium.com/@rrfd/strategy-and-command-design-patterns-wizards-and-sandwiches-applications-in-python-d1ee1c86e00f)  
 - [deep learning Ph.d student, confident learning framework](https://l7.curtisnorthcutt.com/about)  
