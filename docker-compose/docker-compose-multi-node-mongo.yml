@@ -1,0 +1,36 @@
+version: "3.2"
+
+services:
+  mongo-db-1:
+    image : mongo
+    container_name: mongo-2
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=password
+    volumes:
+      - /home/vagrant/mydocker/mongodb/mongo-2/database:/data/db
+    ports:
+      - 27017:27017
+    restart: always
+
+  ts-app-1:
+    image: ts-app
+    container_name: ts-app-1
+    environment:
+      - MONGO_PATH=mongo-db-1:27017
+    ports:
+      - 8081:5000
+    depends_on:
+      - mongo-db-1
+
+  ts-app-2:
+    image: ts-app
+    container_name: ts-app-2
+    environment:
+      - MONGO_PATH=mongo-db-1:27017
+    ports:
+      - 8082:5000
+    depends_on:
+      - mongo-db-1
+
+  
