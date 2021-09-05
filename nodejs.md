@@ -20,5 +20,5 @@ sudo n rm 6.0.0     # replace number with version of Node that was installed
 sudo npm uninstall -g n
 ```
 ## Links
-(rascal rabbitmq into)[https://www.cloudamqp.com/blog/how-to-run-rabbitmq-with-nodejs.html]
+(rascal rabbitmq intro)[https://www.cloudamqp.com/blog/how-to-run-rabbitmq-with-nodejs.html]
 (book - Enterprise integration patterns)[https://www.enterpriseintegrationpatterns.com/]
