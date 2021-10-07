@@ -107,6 +107,7 @@ docker run -d --hostname grafa-host-1 --name grafa-1 -p 3000:3000 grafana/grafan
 ## Prometheus
 ```
 docker run -d --hostname prom-host-1 --name prom-1 -p 9090:9090 -v my-prom-1:/etc/prometheus prom/prometheus
+docker run -p --name es01 9200:9200 -p 9300:9300 -e "discovery.type=single-node" -e "ELASTIC_PASSWORD=changeme" docker.elastic.co/elasticsearch/elasticsearch:7.14.1
 ```
 `my-prom-1/_data/prometheus.yml` should be created  
 
