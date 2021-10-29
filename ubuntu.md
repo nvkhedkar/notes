@@ -6,6 +6,7 @@
 1. [Cpu info](#cpu-info)
 1. [Nvidia gpu info](#nvidia-gpu-info)
 1. [Find command](#find-command)
+1. [Install docker](#installdocker)
 
 ## Find a word in all files
 ```
@@ -61,7 +62,7 @@ This adds the user to `sudo` group.
 Now add the following line at the endof `/etc/sudoers` file
 ```
 #includedir /etc/sudoers.d
-newuser ALL=(ALL) NOPASSWD:ALL
+newuser ALL=(ALL:ALL) NOPASSWD:ALL
 
 ```
 After this `newuser` will not be asked for passwords.
@@ -185,3 +186,27 @@ sudo apt remove --autoremove nvidia-cuda-toolkit
 [dpkg cheatsheet](https://www.cyberciti.biz/howto/question/linux/dpkg-cheat-sheet.php)
 
 
+## Install docker
+Install pre-reqs
+```
+sudo apt-get update
+sudo apt-get install apt-transport-https ca-certificates curl software-properties-common
+```
+Add repo
+```
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu  $(lsb_release -cs)  stable"
+```
+Update and install
+```
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io
+```
+Check status
+```
+sudo systemctl status docker
+```
+Add me to docker group so I can use it
+```
+sudo usermod -aG docker nkhedkar
+```
