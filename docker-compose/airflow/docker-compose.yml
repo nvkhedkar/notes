@@ -1,4 +1,4 @@
-version: "3.8"
+version: "3.3"
 services:
   pg11:
     image: postgres:11.4
@@ -10,8 +10,8 @@ services:
       - PGDATA=/pgdata/pg11-1
       # - POSTGRES_HOST_AUTH_METHOD=trust
     volumes:
-      - /mydocker/pgdata/pg11-1:/pgdata/pg11-1
-    restart: always
+      - ~/mydocker/pgdata/pg11-1:/pgdata/pg11-1
+    restart: on-failure
   
   redis:
     image: redis
@@ -19,31 +19,36 @@ services:
     ports:
       - "6379:6379"
     volumes:
-      - /mydocker/redisdata/conf:/usr/local/etc/redis
+      - ~/mydocker/redisdata/conf:/usr/local/etc/redis
     command:  redis-server /usr/local/etc/redis/redis.conf
+    restart: on-failure
 
   rabbitmq:
     image: rabbitmq:3-management
     container_name: rabbitmq-1
     volumes:
-      - /mydocker/rabbitmq/etc/:/etc/rabbitmq/
-      - /mydocker/rabbitmq/data/:/var/lib/rabbitmq/
-      - /mydocker/rabbitmq/logs/:/var/log/rabbitmq/
+      - ~/mydocker/rabbitmq/etc/:/etc/rabbitmq/
+      - ~/mydocker/rabbitmq/data/:/var/lib/rabbitmq/
+      - rmq-1:/var/log/rabbitmq
     environment:
       RABBITMQ_ERLANG_COOKIE: "erlang_cookie"
       # RABBITMQ_DEFAULT_USER: guest
       # RABBITMQ_DEFAULT_PASS: password
     ports:
+      - 5671:5671
+      - 15671:15671
       - 5672:5672
       - 15672:15672
+volumes:
+  rmq-1:
 
-  nginx:
-    image: nginx
-    container_name: nginx-1
-    volumes:
-      - /mydocker/nginx/rp1/etc:/etc/nginx
-    ports:
-      - 8080:80
-      - 443:443
-      - 8081:8081
+  # nginx:
+  #   image: nginx
+  #   container_name: nginx-1
+  #   volumes:
+  #     - ~/mydocker/nginx/rp1/etc:/etc/nginx
+  #   ports:
+  #     - 8080:80
+  #     - 443:443
+  #     - 8081:8081
 

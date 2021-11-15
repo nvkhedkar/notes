@@ -1,0 +1,20 @@
+version: "3.3"
+services:
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbit-1
+    hostname: rabbit-host-1
+    volumes:
+      - ~/mydocker/rabbitmq/rmq-1/etc/:/etc/rabbitmq
+      - ~/mydocker/rabbitmq/rmq-1/data:/var/lib/rabbitmq
+      - rmq-1:/var/log/rabbitmq
+    environment:
+      # RABBITMQ_ERLANG_COOKIE: "erlang_cookie"
+      RABBITMQ_DEFAULT_USER: guest
+      RABBITMQ_DEFAULT_PASS: guest
+    ports:
+      - 5672:5672
+      - 15672:15672
+    restart: always
+volumes:
+  rmq-1:

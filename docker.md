@@ -81,6 +81,7 @@ Simple command also works - default user/pass is guest/guest
 ```
 docker run -d --hostname host-rabbit-2 --name rabbit-2 -p 5672:5672 -p 15672:15672 rabbitmq:3-management
 ```
+`/mydocker/rabbitmq/logs` needs to be created and have permissions `0777`  
 Other variables
 ```
 -e RABBITMQ_DEFAULT_USER=guest
