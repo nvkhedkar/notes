@@ -14,6 +14,7 @@
 [Uber Train CNN with Genetic Algorithm instead of Gradient Descent](https://eng.uber.com/deep-neuroevolution/)  
 [Target encoding with code](https://brendanhasz.github.io/2019/03/04/target-encoding#target-encoding)  
 [model averaging ensemble for deep learning neural networks](https://machinelearningmastery.com/model-averaging-ensemble-for-deep-learning-neural-networks/)  
+[stackoverflow: rienforcement learning in continuous spaces](https://stackoverflow.com/questions/7098625/how-can-i-apply-reinforcement-learning-to-continuous-action-spaces)  
 
 
 ## Books
