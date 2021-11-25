@@ -19,5 +19,6 @@
 
 ## Books
 [Think Stats](https://greenteapress.com/wp/think-stats-2e/): This page has other free books too.  
-[SQL into: Open Source Data Engineering book](https://github.com/oleg-agapov/data-engineering-book/blob/master/book/2-beginner-path/2-2-sql-for-beginners/sql-1.md)
+[SQL into: Open Source Data Engineering book](https://github.com/oleg-agapov/data-engineering-book/blob/master/book/2-beginner-path/2-2-sql-for-beginners/sql-1.md)  
+[Many books](https://theswissbay.ch/pdf/Gentoomen%20Library/)  
 
