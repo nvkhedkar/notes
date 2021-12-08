@@ -210,3 +210,8 @@ Add me to docker group so I can use it
 ```
 sudo usermod -aG docker nkhedkar
 ```
+## Path
+Add directory to path  
+```
+export PATH="/path/to/dir:$PATH"
+```
