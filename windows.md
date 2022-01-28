@@ -12,3 +12,18 @@ Run in the search bar
 ```
 mmsys.cpl
 ```
+
+## yt-dlp
+Just download:
+```
+yt-dlp <url>
+```
+This downloads the best video.  
+To see types of files:
+```
+yt-dlp -F <url>
+```
+combine best video and audio
+```
+yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4] <url>"
+```

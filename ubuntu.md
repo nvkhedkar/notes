@@ -215,3 +215,35 @@ Add directory to path
 ```
 export PATH="/path/to/dir:$PATH"
 ```
+## Multiple ethernets
+Before starting the vm - in virtualbox network settings - enable "bridged" and "nat network" both.
+Ubuntu 20.04 uses netplan to configure ethernets. At a time only one  `eth#` will be active.  
+To activate 2:
+```
+sudo vi /etc/netplan/01-network-manager-all.yaml
+```
+Add the following lines
+```
+  ethernets:
+    en01:
+      dhcp4: true
+      dhcp6: true
+```
+The final file will look like:
+```
+# Let NetworkManager manage all devices on this system
+network:
+  version: 2
+  renderer: NetworkManager
+  ethernets:
+    eth0:
+      dhcp4: true
+      dhcp6: true
+    eth1:
+      dhcp4: true
+      dhcp6: true
+```
+The do:
+```
+sudo netplan apply
+```

@@ -14,7 +14,7 @@ sudo swapoff -a
 
 ```
 sudo apt install net-tools
-sudo apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+sudo apt install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common git
 ```
 ```
 sudo tee /etc/sysctl.d/k8s.conf<<EOF
@@ -35,6 +35,18 @@ curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key add
 echo "deb https://apt.kubernetes.io/ kubernetes-xenial main" | sudo tee /etc/apt/sources.list.d/kubernetes.list
 sudo apt update
 ```
+
+sudo tee /etc/docker/daemon.json <<EOF
+{
+  "exec-opts": ["native.cgroupdriver=systemd"],
+  "log-driver": "json-file",
+  "log-opts": {
+    "max-size": "100m"
+  },
+  "storage-driver": "overlay2"
+}
+EOF
+
 ## Start cluster
 ```
 sudo kubeadm init \
@@ -44,8 +56,18 @@ sudo kubeadm init \
 ```
 
 ```
-sudo kubeadm init --pod-network-cidr=192.168.1.0/24 --upload-certs --control-plane-endpoint=k8s-cluster.pratham.com
+sudo kubeadm init --pod-network-cidr=10.10.1.0/16 --upload-certs --control-plane-endpoint=pratham.k8s-master.com
 ```
+
+```
+kubectl apply -f https://docs.projectcalico.org/v3.14/manifests/calico.yaml
+```
+
+## on worker
+- add `192.168.0.75 pratham.k8s-master.com` to /etc/hosts of worker machine
+- kubeadm reset
+- Run the join command
+
 
 ## temp
 
