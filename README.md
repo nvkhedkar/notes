@@ -1,2 +1,7 @@
 # notes
-Notes on many things
+My notes on:
+- Coding
+- Dev-ops
+- ML
+And Many more...
+
