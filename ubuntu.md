@@ -247,3 +247,29 @@ The do:
 ```
 sudo netplan apply
 ```
+
+## nohup
+run process in background so closing terminal does not close the process  
+
+```
+nohup python myapp.py -a <arg1> -b <arg2> &
+```
+This appends command output to `nohup.out`.  
+To rotate `nohup.out` with logrotate.  
+Create /etc/logrotate.d/nohup and add the following:
+```
+/<path_to_file>/nohup.out {
+    size 124k
+    copytruncate
+    notifempty
+    rotate 5
+}
+```
+Direct output to another file
+```
+nohup command > output.log 2>&1 &
+```
+Direct output to dev/null
+```
+nohup command >/dev/null 2>&1 & 
+```
