@@ -25,5 +25,9 @@ yt-dlp -F <url>
 ```
 combine best video and audio
 ```
-yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4] <url>"
+yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <url>
+```
+combine best mp4 video with filesize < 1500M and audio
+```
+yt-dlp -f "bv[filesize<1500M][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <url>
 ```
