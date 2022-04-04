@@ -13,7 +13,14 @@ Use the following to avoid packages from being uninstalled and re-installed
 ```
 ## New Miniconda stuff
 Use Miniconda prompt to do `conda install` or `conda create`  
-
+### Create new env at specified location
+```
+conda create -p c:\python\3_39_envs\py391_ml python=3.9
+```
+### Disable ssl verification
+```
+conda config --set ssl_verify no
+```
 ## Gnuicorn
 ### Start flask server
 ```
