@@ -31,6 +31,10 @@ combine best mp4 video with filesize < 1500M and audio
 ```
 yt-dlp -f "bv[filesize<1500M][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <url>
 ```
+combine best mp4 video with 720p resolution and audio and format output to include timestamp
+```
+yt-dlp -f "bv[height=720][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <url> -o "%(title)s-%(upload_date)s.%(ext)s"
+```
 
 combine best video and audio - and convert only to mp3
 ```
