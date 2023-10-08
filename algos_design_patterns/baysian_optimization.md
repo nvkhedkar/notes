@@ -1,3 +1,4 @@
+# Baysian Optimization pseudo code
 ```
 # Import necessary libraries
 import numpy as np
