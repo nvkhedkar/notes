@@ -40,3 +40,7 @@ combine best video and audio - and convert only to mp3
 ```
 yt-dlp -f "bv[ext=mp4]+ba[ext=m4a]/b[ext=mp4]" -x --audio-format mp3 <url>
 ```
+No check certificate  
+```
+--no-check-certificates
+```
