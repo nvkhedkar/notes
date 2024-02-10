@@ -58,6 +58,10 @@ spark-class org.apache.spark.deploy.worker.Worker spark://192.168.56.1:7077 --me
 - [sympy](https://www.sympy.org/en/index.html): Symbolic mathematics in python
 - [Shapely](https://github.com/Toblerity/Shapely): Geometric object manipulation in 2D cartesian plane
 - [Meltato](https://meltano.com/): ELT for mongodb - alternative to dbt
+
+## Web Frameworks
+- [Shiny](https://shiny.posit.co/py/): Interactive web apps in python
+- [Reflex](https://reflex.dev/): Web apps in pure python. FastAPI and SqlAlchemy integrated.
   
 ## fastbook
 ### Install locally
