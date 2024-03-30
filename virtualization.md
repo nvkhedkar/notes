@@ -40,6 +40,9 @@ vagrant init ubuntu-18.04-base-amd64
 This addes vagrantfile in dir and now vagrant up can be used to start the box
 
 #### Change disk size
+```
 VBoxManage.exe clonemedium D:\virtualbox\disk_dir\ubuntu-20.04-desktop-amd64-disk001.vmdk ubuntu-20.04-desktop-amd64-disk001.vdi --format vdi --variant standard
+VBoxManage clonehd --format --variant standard VDI packer-20240225-153256-disk001.vmdk nvk-ub-22.04-dsktp-base.vdi
 VBoxManage.exe modifymedium D:\virtualbox\disk_dir\ubuntu-20.04-desktop-amd64-disk001.vdi --resize 150100
+```
 
