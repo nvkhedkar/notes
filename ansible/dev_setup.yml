@@ -1,0 +1,87 @@
+---
+- name: Configure Ubuntu Development Machine
+  hosts: localhost
+  become: true
+
+  tasks:
+    # - name: Update and upgrade APT packages
+    #   apt:
+    #     update_cache: yes
+    #     upgrade: dist
+
+    - name: Install required packages
+      apt:
+        name:
+          - build-essential
+          - ca-certificates
+          - curl
+          - git
+          - tmux
+          - unzip
+          - wget
+          - zsh
+        state: present
+
+    - name: Install Docker
+      apt:
+        name:
+          - apt-transport-https
+          - software-properties-common
+        state: present
+
+    - name: Add Docker GPG key
+      command: curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+      args:
+        creates: /usr/share/keyrings/docker-archive-keyring.gpg
+
+    - name: Add Docker repository
+      copy:
+        content: |
+          deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable
+        dest: /etc/apt/sources.list.d/docker.list
+
+    - name: Install Docker
+      apt:
+        name:
+          - docker-ce
+          - docker-ce-cli
+          - containerd.io
+        state: present
+
+    - name: Add user to Docker group
+      user:
+        name: "{{ ansible_user }}"
+        groups: docker
+        append: yes
+
+    - name: Install Visual Studio Code
+      command: curl -fsSL https://code.visualstudio.com/sha/download?build=stable&os=linux-deb-x64 -o /tmp/code.deb
+      args:
+        creates: /tmp/code.deb
+
+    - name: Install VS Code package
+      apt:
+        deb: /tmp/code.deb
+
+    - name: Install tmux Plugin Manager
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: ~/.tmux/plugins/tpm
+        version: master
+
+    - name: Change default shell to zsh
+      shell: chsh -s $(which zsh) "{{ ansible_user }}"
+      when: ansible_user != 'root'
+
+    - name: Clean up temporary files
+      file:
+        path: /tmp/code.deb
+        state: absent
+
+    - name: Reboot the system (optional)
+      reboot:
+        msg: "Rebooting to finalize installation."
+        connect_timeout: 300
+        reboot_timeout: 600
+        pre_reboot_delay: 5
+        post_reboot_delay: 30
