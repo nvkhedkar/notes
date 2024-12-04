@@ -1,0 +1,18 @@
+---
+- name: Configure Ubuntu Development Machine
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Install required packages
+      apt:
+        name:
+          - build-essential
+          - ca-certificates
+          - curl
+          - git
+          - tmux
+          - unzip
+          - wget
+          - zsh
+        state: present
