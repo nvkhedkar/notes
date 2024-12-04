@@ -1,0 +1,8 @@
+---
+- name: Main Playbook
+  hosts: localhost
+  become: true
+
+  tasks:
+    - name: Include setup playbook
+      include_playbook: base.yml
