@@ -23,6 +23,47 @@ sudo npm uninstall -g n
 (rascal rabbitmq intro)[https://www.cloudamqp.com/blog/how-to-run-rabbitmq-with-nodejs.html]
 (book - Enterprise integration patterns)[https://www.enterpriseintegrationpatterns.com/]
 
+
+## npm version management on windows
+To find the location of global npm packages on Windows, you can use the following methods:
+
+- **Default Global Path:**  
+  By default, global npm packages are installed at:
+  ```
+  C:\Users\\AppData\Roaming\npm\node_modules
+  ```
+  The executables (binaries) are typically in:
+  ```
+  C:\Users\\AppData\Roaming\npm
+  ```
+
+
+- **Check with npm Command:**  
+  To see the exact location on your system, run:
+  ```
+  npm root -g
+  ```
+  This will output the global `node_modules` directory path.
+
+- **Check the Prefix Setting:**  
+  The global install location is determined by the npm `prefix` configuration. To see the prefix, run:
+  ```
+  npm config get prefix
+  ```
+  The global packages will be in the `node_modules` subfolder of this prefix path.
+
+- **Customizing the Location:**  
+  You can change the global install location by setting a new prefix:
+  ```
+  npm config set prefix "C:\Your\Custom\Path"
+  ```
+  After this, global packages will be installed in `C:\Your\Custom\Path\node_modules`.
+
+**Summary:**  
+By default, global npm packages on Windows are located at `C:\Users\\AppData\Roaming\npm\node_modules`. Use `npm root -g` or `npm config get prefix` to verify or customize this location.
+
+---
+
 ## Azurite on windows
 ### Detailed Tutorial: Using Azurite on Windows
 
