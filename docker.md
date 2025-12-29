@@ -112,6 +112,17 @@ docker run -p --name es01 9200:9200 -p 9300:9300 -e "discovery.type=single-node"
 ```
 `my-prom-1/_data/prometheus.yml` should be created  
 
+## Zincsearch
+```
+docker run -v /full/path/of/data:/data \
+-e ZINC_DATA_PATH="/data" \
+-e ZINC_FIRST_ADMIN_USER=admin \
+-e ZINC_FIRST_ADMIN_PASSWORD=admin \
+-e ZINC_TELEMETRY=false \
+-h 0.0.0.0 -p 4080:4080 \
+--name zincsearch01 public.ecr.aws/zinclabs/zincsearch:latest
+```
+
 ## install docker
 ```
 sudo apt install apt-transport-https ca-certificates curl software-properties-common
