@@ -44,3 +44,8 @@ No check certificate
 ```
 --no-check-certificates
 ```
+dump json info files
+```
+yt-dlp -f "bv[height=720][ext=mp4]+ba[ext=m4a]/b[ext=mp4]" <url> -o "%(timestamp)s-%(upload_date)s-%(title)s.%(ext)s"
+yt-dlp -O "infojson:-"  <url> | jq '{timestamp: .timestamp, upload_date: .upload_date, fulltitle: .fulltitle}' > filtered_info.json
+```
